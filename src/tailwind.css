@@ -1,3 +1,6 @@
 @tailwind base;
+body{
+    color: #333;
+}
 @tailwind components;
 @tailwind utilities;

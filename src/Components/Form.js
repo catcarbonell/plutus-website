@@ -9,11 +9,11 @@ const Form =()=>{
         <Container>
             <div className="max-w-xl mx-auto text-center flex flex-col">
                 <form>
-                    <div className="mb-2">
+                    <div className="mb-4">
                         <h2 className="text-2xl text-custom-blue">If you would like to learn more, sign up below:</h2>
                     </div>
                     <div>
-                        <input className="rounded-xl border shadow px-4 py-2 mb-4 w-2/3" 
+                        <input className="rounded-xl border shadow px-4 py-2 mb-2 w-2/3" 
                             type="text" 
                             placeholder="email@email.com" 
                             name="email" value={value} 
