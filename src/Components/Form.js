@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Container from './Layout/Container'
 const Form =()=>{
     const [value, setValue] = useState('');
+    const regx=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     return(
         <Container>
@@ -20,16 +21,19 @@ const Form =()=>{
                     </div>
 
                     <br />
-                    {value === null || value === undefined || value === '' ? 
-                        <div className="bg-gray-300 w-1/3 text-white uppercase rounded-xl shadow mx-auto px-4 py-2">
-                        Sign Up
-                        </div>
-                        :
-                        <Link to="/confirmation">
-                            <div className="bg-custom-orange w-1/3 hover:bg-custom-ltorange text-white uppercase rounded-xl shadow mx-auto px-4 py-2">
+                    {value === null || value === undefined || value === '' ||  !value.match(regx) ? 
+                        <>
+                            <div className="bg-gray-300 w-1/3 text-white uppercase rounded-xl shadow mx-auto px-4 py-2">
                                 Sign Up
                             </div>
-                        </Link>
+                            <p className="mt-2 text-red-400">Please enter a valid email address.</p>
+                        </>
+                        :
+                            <Link to="/confirmation">
+                                <div className="bg-custom-orange w-1/3 hover:cursor-pointer hover:bg-custom-ltorange text-white uppercase rounded-xl shadow mx-auto px-4 py-2">
+                                    Sign Up
+                                </div>
+                            </Link>
                     }
                   
                 </form>
